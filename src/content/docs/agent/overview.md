@@ -47,5 +47,5 @@ GitHub / Azure DevOps
 
 | Repo | Description |
 |---|---|
-| `the-agent` | .NET control plane — agent, workflows, orchestrator, rules engine |
+| `the-agent` | .NET agent to deploy on Xians, workflows, orchestrator, rules engine |
 | `plugins-official` | Official Claude Code plugins maintained by the 99x / Xianix team |

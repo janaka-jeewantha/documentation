@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import mermaid from 'astro-mermaid';
 import { visit } from 'unist-util-visit';
 
 const base = '/documentation';
@@ -26,6 +27,7 @@ export default defineConfig({
 		remarkPlugins: [remarkPrependBase],
 	},
 	integrations: [
+		mermaid({ autoTheme: true }),
 		starlight({
 			title: 'Xianix AI-DLC Docs',
 			description: 'AI-powered automation for your development lifecycle.',
@@ -36,21 +38,17 @@ export default defineConfig({
 				{
 					label: 'The Agent',
 					items: [
-						{ label: 'Overview', slug: 'agent/overview' },
-						{ label: 'Architecture', slug: 'agent/architecture' },
-						{ label: 'Setup', slug: 'agent/setup' },
-						{ label: 'Rules Configuration', slug: 'agent/rules' },
-						{ label: 'Executor', slug: 'agent/executor' },
-						{ label: 'Tenant Isolation', slug: 'agent/tenant-isolation' },
-						{ label: 'Azure Deployment', slug: 'agent/azure-deployment' },
+				{ label: 'Overview', slug: 'agent/overview' },
+					{ label: 'Architecture', slug: 'agent/architecture' },
 					],
 				},
 				{
 					label: 'Agent Installation',
 					items: [
-						{ label: 'Prerequisites', slug: 'agent-installation/prerequisites' },
-						{ label: 'Quick Start', slug: 'agent-installation/quickstart' },
-						{ label: 'Configuration Reference', slug: 'agent-installation/configuration' },
+					{ label: 'Prerequisites', slug: 'agent-installation/prerequisites' },
+					{ label: 'Quick Start', slug: 'agent-installation/quickstart' },
+					{ label: 'Rules Configuration', slug: 'agent-installation/rules' },
+					{ label: 'Configuration Reference', slug: 'agent-installation/configuration' },
 					],
 				},
 				{
@@ -85,11 +83,15 @@ export default defineConfig({
 				{
 					label: 'Agent Development',
 					items: [
-						{ label: 'Overview', slug: 'agent-development/overview' },
-						{ label: 'Project Structure', slug: 'agent-development/project-structure' },
-						{ label: 'Workflows & Activities', slug: 'agent-development/workflows-and-activities' },
-						{ label: 'Testing', slug: 'agent-development/testing' },
-						{ label: 'Contributing', slug: 'agent-development/contributing' },
+					{ label: 'Overview', slug: 'agent-development/overview' },
+					{ label: 'Setup', slug: 'agent-development/setup' },
+					{ label: 'Executor', slug: 'agent-development/executor' },
+					{ label: 'Tenant Isolation', slug: 'agent-development/tenant-isolation' },
+					{ label: 'Project Structure', slug: 'agent-development/project-structure' },
+					{ label: 'Workflows & Activities', slug: 'agent-development/workflows-and-activities' },
+					{ label: 'Testing', slug: 'agent-development/testing' },
+					{ label: 'Azure Deployment', slug: 'agent-development/azure-deployment' },
+					{ label: 'Contributing', slug: 'agent-development/contributing' },
 					],
 				},
 			],

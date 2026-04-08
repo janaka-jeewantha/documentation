@@ -1,14 +1,14 @@
 ---
-title: Xianix Documentation
-description: AI-powered automation for your development lifecycle.
+title: Xianix — AI-DLC for Software Delivery
+description: Humans and AI, working at 99x speed. The SDLC is becoming the AI-DLC — an AI-Driven Lifecycle where agents collaborate seamlessly so engineers can focus on work that only humans can do.
 template: splash
 hero:
-  tagline: AI-powered automation for your development lifecycle
+  tagline: Humans and AI, working at 99x speed
   actions:
     - text: Get Started
       link: /documentation/agent/overview/
       icon: right-arrow
-    - text: Browse Plugins
+    - text: Meet the Agents
       link: /documentation/plugins/overview/
       icon: list-format
       variant: minimal
@@ -16,29 +16,55 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## What is Xianix?
+## From SDLC to AI-DLC
 
-Xianix connects your code platform (GitHub, Azure DevOps) to AI automation through a layered pipeline. When events occur in your repositories — PRs opened, issues created — Xianix routes them to the right plugin and runs it in an isolated container automatically.
+The SDLC is becoming the **AI-DLC**: an AI-Driven Lifecycle where agents in a coordinated mesh collaborate seamlessly, so your engineers can focus on work that only humans can do. GitHub & Azure DevOps · Claude-powered · Docker-ready · Open Source.
+
+Retrofitting AI into an unchanged delivery process often creates more noise than value. Better results come from shorter feedback loops, clearer handoffs, and explicit human accountability. Xianix connects AI directly to delivery tools, keeps feedback tight, and places people at the decision points that matter.
+
+## The Agent Team
+
+Five specialized agents support the delivery flow, each with a clear trigger, a defined output, a simple definition of done, and an explicit human checkpoint. Shared artifacts — not tight runtime coupling — are what make this a team: backlog context flows into design, design and implementation flow into review, review feeds testing, and approved change signals feed release preparation.
 
 <CardGrid stagger>
-	<Card title="The Agent" icon="rocket">
-		A long-running .NET process that polls Xians, interprets tasks, and orchestrates execution in isolated Docker containers.
-
-		[Set up the agent →](/agent/overview/)
-	</Card>
-	<Card title="PR Reviewer" icon="approve-check">
-		Comprehensive pull request reviews with specialized agents for code quality, security, test coverage, and performance.
-
-		[Learn more →](/plugins/pr-reviewer/overview/)
-	</Card>
 	<Card title="Requirement Analyst" icon="document">
-		Grooms backlog items by analyzing user intent, domain knowledge, and competitive context — then posts the elaborated requirement directly to GitHub or Azure DevOps.
+		Clarifies backlog items into structured requirements with acceptance criteria, edge cases, and targeted questions. Triggered when a new backlog item is created.
 
 		[Learn more →](/plugins/req-analyst/overview/)
 	</Card>
-	<Card title="Build Plugins" icon="puzzle">
-		Create your own plugins and publish them to the Xianix marketplace to extend the agent's capabilities for any workflow.
+	<Card title="Technical Designer" icon="pencil">
+		Turns a groomed backlog item into an implementation spec with affected components, interfaces, and testing expectations. Triggered when a story is moved into a sprint.
+
+		[Learn more →](/agent/overview/)
+	</Card>
+	<Card title="PR Reviewer" icon="approve-check">
+		Checks every pull request against requirements, architecture, code quality, and risk before human sign-off. Posts structured findings categorized by severity.
+
+		[Learn more →](/plugins/pr-reviewer/overview/)
+	</Card>
+	<Card title="Test Planner" icon="list-format">
+		Prioritizes the highest-risk test scenarios and highlights gaps in automated coverage before merge. Triggered after a PR passes initial checks.
+
+		[Learn more →](/agent/overview/)
+	</Card>
+	<Card title="Release Manager" icon="rocket">
+		Compiles release notes, checks readiness across completed work, flags breaking changes, and surfaces rollout concerns for human approval.
+
+		[Learn more →](/agent/overview/)
+	</Card>
+	<Card title="Build Your Own Plugins" icon="puzzle">
+		The same agent pattern applies to any workflow. Define the prompt, connect the right tools and trigger, and keep human review at decision points that carry product or release risk.
 
 		[Plugin development →](/plugin-development/overview/)
 	</Card>
 </CardGrid>
+
+## Human judgment as the control point
+
+In AI-DLC, people do not disappear from the process — their role becomes clearer: set direction, add context, and decide when AI output is good enough to move forward.
+
+| AI suggests | Human decides |
+|---|---|
+| Detailed work plan — breaks an intent into tasks and sub-tasks | Adds context, removes work that doesn't support the goal |
+| Architectural options — sync vs. async, storage choices, service boundaries | Reviews key decisions based on risk, cost, and team knowledge |
+| Step-by-step directions — implementation steps, test ideas, next actions | Keeps work on course and corrects direction when needed |

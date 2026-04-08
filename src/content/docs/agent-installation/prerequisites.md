@@ -9,17 +9,9 @@ Before installing the Xianix Agent, make sure you have the following accounts an
 
 | Account | Required for |
 |---|---|
-| [Xians](https://app.xians.ai) | Registering the agent and receiving webhook events |
+| [Xians](https://xians.ai) | Agent control plane self-hosted or 99x's [Agentri](https://agentri.ai/) account |
 | [Anthropic](https://console.anthropic.com) | API key for Claude (LLM) |
-| GitHub and/or Azure DevOps | Platform to receive webhook events from |
-
-## Software
-
-| Tool | Version | Required for |
-|---|---|---|
-| [.NET SDK](https://dotnet.microsoft.com/download) | See `global.json` for pinned version | Running the agent locally |
-| [Docker](https://docs.docker.com/get-docker/) | 24+ | Spawning executor containers |
-| Git | Any recent version | Cloning repositories inside executor containers |
+| GitHub and/or Azure DevOps | Repo admin access to configure access and wekhooks |
 
 ## Tokens & Keys
 

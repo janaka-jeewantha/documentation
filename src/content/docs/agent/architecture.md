@@ -5,15 +5,14 @@ description: Architecture objectives, overall flow, and sequence diagrams for th
 
 ## Architecture Objectives
 
-- Be centered around the Git repository for initial set of agents
 - Ability to create sophisticated agents
 - Agent should be centrally governed, not on the IDE of a developer
-- Easily bring in custom agents to extend the agent architecture
+- Easily bring in custom plugins to extend the agent architecture
 - Support different CM platforms like GitHub, GitLab, Azure DevOps
-- Isolation levels (tenant, repo)
+- Security and proper isolation levels (tenant, repo)
 - Platform to support non-coding agents such as for marketing, HR, etc.
 - Monitoring, visibility and quota allocations
-- Human ↔ Agent ping-pong process
+- Human ↔ Agent ping-pong process by responding to events
 
 ## Overall Flow
 
