@@ -17,41 +17,32 @@ The team has two complementary modes of operation.
 
 ### Lifecycle agents — label-triggered
 
-```mermaid
-flowchart TD
-    Human([You]) <-->|labels and reviews| Lifecycle
-    subgraph Lifecycle [Lifecycle agents]
-        L1[req-analyst]
-        L2[ac-writer]
-        L3[solution-architect]
-        L4[task-planner]
-        L5[implementer]
-        L6[pr-reviewer]
-        L7[test-author]
-        L8[doc-writer]
-        L9[bug-triager]
-        L10[postmortem-writer]
-    end
-```
+| Agent | Brief description |
+| --- | --- |
+| `req-analyst` | Turns a raw idea into structured requirements and clarifications. |
+| `ac-writer` | Writes Gherkin-style acceptance criteria from agreed requirements. |
+| `solution-architect` | Proposes a solution design and records it (e.g. as an ADR). |
+| `task-planner` | Splits an epic or large item into smaller, trackable child issues. |
+| `implementer` | Implements the change and opens or updates a draft pull request. |
+| `pr-reviewer` | Runs a full review: quality, security, tests, and performance. |
+| `test-author` | Adds or extends automated tests where coverage is missing. |
+| `doc-writer` | Updates user-facing or internal docs to match the change. |
+| `bug-triager` | Classifies incoming bugs, severity, and suggested routing. |
+| `postmortem-writer` | Drafts a structured postmortem after an incident. |
 
 **Lifecycle agents** form the linear ping-pong from idea to deployed code. They only run when *you* apply a label.
 
 ### Continuous review agents — scheduled
 
-```mermaid
-flowchart TD
-    Cron([Scheduler / CI cron]) --> Continuous
-    subgraph Continuous [Continuous review agents]
-        C1[security-scanner]
-        C2[performance-scanner]
-        C3[test-coverage-scanner]
-        C4[dependency-scanner]
-        C5[doc-drift-scanner]
-        C6[dead-code-scanner]
-        C7[flaky-test-scanner]
-    end
-    Continuous -->|opens labelled issues / PRs| Lifecycle([Into the lifecycle pipeline])
-```
+| Agent | Brief description |
+| --- | --- |
+| `security-scanner` | Scans for vulnerabilities, secrets, and insecure patterns. |
+| `performance-scanner` | Flags hotspots, regressions, and inefficient code paths. |
+| `test-coverage-scanner` | Surfaces untested or weakly tested areas. |
+| `dependency-scanner` | Reports outdated, vulnerable, or conflicting dependencies. |
+| `doc-drift-scanner` | Detects documentation that no longer matches the code. |
+| `dead-code-scanner` | Finds unused modules, exports, or unreachable paths. |
+| `flaky-test-scanner` | Identifies unstable or order-dependent tests. |
 
 **Continuous review agents** patrol the repo on a schedule, find problems on their own, and *enter* the lifecycle by opening already-labelled issues or PRs. They never silently change your code.
 
